@@ -181,6 +181,7 @@ class Imap
         */
         //  replace any trailing <NL> including spaces with a single space
         $line = rtrim($line) . ' ';
+        $line = str_replace(')(', ') (', $line);
         while (($pos = strpos($line, ' ')) !== false) {
             $token = substr($line, 0, $pos);
             if (! strlen($token)) {
